@@ -1,0 +1,79 @@
+{% spaceless %}
+{% load bootstrap3 %}
+{% load staticfiles %} <!-- per caricare i file della cartella "static" che chiederemo al server di cariare poiche django non legge velocemente altri file diversi da python -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>{% block TITLE %}Viv-s{% endblock %}</title>
+
+    <!-- Custom styles for this template -->
+      {% bootstrap_css %}
+    <link href="{% static 'css/dashboard.css' %}" rel="stylesheet" >
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a id="logo" class="navbar-brand" href="#">Viv-s</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">about</a></li>
+            <li><a href="#">works</a></li>
+            <li><a href="#">contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+            {% if project_list %} <!-- in python se una cosa è  = 0, in booleano = "false" -->
+            <h4>works</h4>
+            <ul class="nav nav-sidebar">
+            {% for element in project_list %} <!-- "parcours" = context_object_name in view/Parcours -->
+            <li><a href="">{{element}}</a></li>
+            {%endfor%}
+</ul>
+            {% endif %}
+
+            {% if task_list %} <!-- in python se una cosa è  = 0, in booleano = "false" -->
+            <h4>tasks</h4>
+            <ul class="nav nav-sidebar">
+            {% for element in task_list %} <!-- "parcours" = context_object_name in view/Parcours -->
+            <li><a href="{% url 'vivs_app:project:project_detail' %}">{{element}}</a></li>
+            {%endfor%}
+</ul>
+            {% endif %}
+
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <h1 class="page-header">Dashboard</h1>
+
+            {% block CONTENT %}{% endblock %}
+        </div>
+      </div>
+    </div>
+
+    <footer class="container-fluid text-center">
+        <p>Footer Text</p>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    {% bootstrap_javascript %}
+</body>
+</html>
+
+{% endspaceless %}

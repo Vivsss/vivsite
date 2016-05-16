@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block TITLE%} Details du project {% endblock %}
+
+{% block CONTENT %}
+            <h3>Detail du project {{project}}</h3>
+
+            <ul>
+                <li>name : {{project.name}}</li>
+                 <li>website : {{project.website}}</li>
+                <li>client : {{project.client}}</li>
+                <li>client description : {{project.client_descr}}</li>
+                <li>task : {{project.task}}</li>
+                <li>date : {{project.date}}</li>
+            </ul>
+{% endblock %}
