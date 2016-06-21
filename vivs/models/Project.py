@@ -6,12 +6,22 @@ class Project (models.Model):
 
     name = models.CharField(
         verbose_name = "Project name",
-        max_length=25
+        max_length=50
     )
-
+    cover = models.ImageField(
+        verbose_name = "Cover image",
+        upload_to = 'cover/',
+        height_field = None,
+        width_field = None,
+        max_length = 100,
+        null = True,
+        blank = True
+    )
     website = models.CharField(
         verbose_name = "Project website",
-        max_length=50
+        max_length=50,
+        null=True,
+        blank=True
     )
 
     client = models.CharField(
@@ -25,20 +35,20 @@ class Project (models.Model):
 
     tasks = models.ManyToManyField(
         Task,
-        verbose_name= "Tasks in this project", #progetto->tasks : quale macchina ha fatto il tragitto
-        related_name="Project with this task+", #task->progetti :per sapere quali sono i percorsi fatti da una macchina
+        verbose_name= "tasksInProject",
+        related_name="projects",
         blank = True
     )
     date = models.CharField(
         verbose_name = "Project date",
-        max_length=25
+        max_length=50
     )
 
     def __str__(self):
         return self.name
 
     def get_absolute_url(self):
-        return reverse_lazy('vivs_app:project:detail', kwargs={'pk': self.id})
+        return reverse_lazy('vivs_app:project:project_detail', kwargs={'pk': self.id})
 
     class Meta:
         app_label = "vivs"

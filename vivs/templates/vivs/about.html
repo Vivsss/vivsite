@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load staticfiles %} <!-- per caricare i file della cartella "static" che chiederemo al server di cariare poiche django non legge velocemente altri file diversi da python -->
+
+{% block TITLE%} Viv-s | About me {% endblock %}
+
+{% block CONTENT %}
+            <div id="about">
+                <!--<h3>about me</h3>-->
+                <p>Je suis une webdesigner et développer basée à Paris.
+                    <br>
+                    J’aime l’interdisciplinarité et le croisement d’idées et de domaines.
+                    <br>
+                    Pendant des études en mathématiques, j’en ai fait en graphisme.
+                    <br>Après je me suis rapprochée à la création web, en développant compétences dans le frontend et le backend.
+                    <br>J’aime les projets qui me permettent de mélanger mes divers connaissances acquises.</p>
+                <a href="/media/download/CV_Viviana_Paga_2016.pdf" download>CV à télécharger</a>
+
+                <!--<object id="svg_about" type="image/svg+xml" data="{% static 'svg/about.svg' %}" class="about-img">
+                    about image <!-- fallback image in CSS
+                </object>-->
+            </div>
+{% endblock %}

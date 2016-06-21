@@ -1,7 +1,17 @@
 {% extends 'base.html' %}
 
-{% block TITLE%} viv-s {% endblock %}
+{% block TITLE%} Viv-s {% endblock %}
 
 {% block CONTENT %}
-            <h3>Project name</h3>
+              <!--  <div class="container-fluid">
+             {% for element in project_list %}
+                    <div id="cover-container" class="">
+                        <a href="{% url 'vivs_app:project:project_detail'  %}">
+                         {% if element.cover %}
+                            <img src="{{ element.cover.url }}" />
+                          {% endif %}
+                        </a>
+                    </div>
+                {%endfor%}
+                </div> -->
 {% endblock %}

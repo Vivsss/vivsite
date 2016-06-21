@@ -1,16 +1,88 @@
 {% extends 'base.html' %}
+{% load staticfiles %} <!-- per caricare i file della cartella "static" che chiederemo al server di cariare poiche django non legge velocemente altri file diversi da python -->
 
-{% block TITLE%} Details du project {% endblock %}
+
+{% block TITLE%}
+    {% for project in projects %}
+        Viv-s | {{project.name}}
+    {% endfor %}
+{% endblock %}
 
 {% block CONTENT %}
-            <h3>Detail du project {{project}}</h3>
+ <div id="top">
+     <div class="pagination-top">
+        <span class="step-links">
+            {% if projects.has_previous %}
+                <a href="?page={{ projects.previous_page_number }}"><img src="{% static 'img/left-arrow.png' %}" /></a>
+            {% endif %}
 
-            <ul>
-                <li>name : {{project.name}}</li>
-                 <li>website : {{project.website}}</li>
-                <li>client : {{project.client}}</li>
-                <li>client description : {{project.client_descr}}</li>
-                <li>task : {{project.task}}</li>
-                <li>date : {{project.date}}</li>
-            </ul>
+            <!-- <span class="current">
+                Page {{ projects.number }} of {{ projects.paginator.num_pages }}.
+            </span> -->
+
+            {% if projects.has_next %}
+                <a href="?page={{ projects.next_page_number }}"><img src="{% static 'img/right-arrow.png' %}" /></a>
+            {% endif %}
+        </span>
+     </div>
+
+                <!--<a href=""><img src="{% static 'img/left-arrow.png' %}" /></a>
+                <a href=""><img src="{% static 'img/right-arrow.png' %}" /></a>-->
+        {% for project in projects %}
+                <div class="inline-project-title">
+                    <h5 class="project-name">{{project.name}}</h5>
+                    {% if project.cover %}
+                    <div class="cover"><img src="{{ project.cover.url }}" /></div>
+                    {% endif %}
+                </div>
+                <p class="descr">{{project.client_descr | linebreaksbr}}</p>
+                <!-- <p class="project-tasks">{% for task in project.tasks.all %}{{task}}  {%endfor%}</p> -->
+                <ul class="">
+                        <li class="client">client : {{project.client}}</li>
+                        <li class="website"><a href="http://{{project.website }}" target="_blank">{{project.website}}</a></>
+                        <li class="date">{{project.date}}</li>
+                </ul>
+                {% if project.images %}
+                <ul class="project-gallery">
+                    {% for element in project.images.all %}
+                        <li>
+                            <img src="{{ element.image.url }}" />
+                            {% if element.image_descr %}
+                                <p class="image-description">{{ element.image_descr }}</p>
+                            {% endif %}
+                            {% if element.name = "juliaKent" %}
+                                <iframe width="100%" height="100" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/54572519&amp;auto_play=false&amp;hide_related=false&amp;show_comments=false&amp;show_user=false&amp;show_reposts=false&amp;visual=false&amp;show_artwork=false"></iframe>                            {% endif %}
+                            {% if element.name = "medeski" %}
+                                <iframe width="100%" height="100" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/74220622&amp;auto_play=false&amp;hide_related=false&amp;show_comments=false&amp;show_user=false&amp;show_reposts=false&amp;visual=false&amp;show_artwork=false"></iframe>
+                            {% endif %}
+                            {% if element.name = "benni" %}
+                                <iframe width="100%" height="100" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/54157354&amp;auto_play=false&amp;hide_related=false&amp;show_comments=false&amp;show_user=false&amp;show_reposts=false&amp;visual=false&amp;show_artwork=false"></iframe>
+                            {% endif %}
+                            {% if element.name = "eric" %}
+                                <iframe width="100%" height="100" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/54288810&amp;auto_play=false&amp;hide_related=false&amp;show_comments=false&amp;show_user=false&amp;show_reposts=false&amp;visual=false&amp;show_artwork=false"></iframe>
+                            {% endif %}
+                        </li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+     {% endfor %}
+
+     <div class="pagination-bottom">
+        <span class="step-links">
+            {% if projects.has_previous %}
+                <a href="?page={{ projects.previous_page_number }}"><img src="{% static 'img/left-arrow.png' %}" /></a>
+            {% endif %}
+
+            <a id="up" href="#top"><img src="{% static 'img/up-arrow.png' %}" alt="up on the page" /></a>
+            <!-- <span class="current">
+                Page {{ projects.number }} of {{ projects.paginator.num_pages }}.
+            </span> -->
+
+            {% if projects.has_next %}
+                <a href="?page={{ projects.next_page_number }}"><img src="{% static 'img/right-arrow.png' %}" /></a>
+            {% endif %}
+        </span>
+     </div>
+
+ </div>
 {% endblock %}

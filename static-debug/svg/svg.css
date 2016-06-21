@@ -1,0 +1,159 @@
+svg a{
+    display:block;
+    }
+/*.mask{
+    opacity: 0;
+}
+
+.mask:hover{
+    opacity: 1;
+}*/
+
+/*
+#cocciutaggine{
+    -webkit-animation-name: svgOnLoad3;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: ease-out;
+    -webkit-animation-duration: 1.5s;
+    animation-name: svgOnLoad3;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+    animation-duration: 1.5s;
+}
+#anbar{
+    -webkit-animation-name: svgOnLoad3;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: ease-out;
+    -webkit-animation-duration: 1.5s;
+    animation-name: svgOnLoad3;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+    animation-duration: 1.5s;
+}
+#anna{
+    -webkit-animation-name: svgOnLoad3;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: ease-out;
+    -webkit-animation-duration: 1.5s;
+    animation-name: svgOnLoad3;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+    animation-duration: 1.5s;
+}
+#makeda{
+    -webkit-animation-name: svgOnLoad3;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: ease-out;
+    -webkit-animation-duration: 1.5s;
+    animation-name: svgOnLoad3;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+    animation-duration: 1.5s;
+}
+#emoticon{
+    -webkit-animation-name: svgOnLoad3;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: ease-out;
+    -webkit-animation-duration: 1.5s;
+    animation-name: svgOnLoad3;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+    animation-duration: 1.5s;
+}
+#black{
+    -webkit-animation-name: svgOnLoad3;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: ease-out;
+    -webkit-animation-duration: 1.5s;
+    animation-name: svgOnLoad3;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+    animation-duration: 1.5s;
+}
+#efest{
+    -webkit-animation-name: svgOnLoad3;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: ease-out;
+    -webkit-animation-duration: 1.5s;
+    animation-name: svgOnLoad3;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+    animation-duration: 1.5s;
+}
+#ek{
+    -webkit-animation-name: svgOnLoad3;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: ease-out;
+    -webkit-animation-duration: 1.5s;
+    animation-name: svgOnLoad3;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+    animation-duration: 1.5s;
+}
+@-webkit-keyframes svgOnLoad3 {
+    10% {opacity: 0;}
+    25% {opacity: 1;}
+    40% {opacity: 0;}
+    67% {opacity: 0;}
+    70% {opacity: 1;}
+    73% {opacity: 0;}
+    87% {opacity: 0;}
+    90% {opacity: 1;}
+    93% {opacity: 0;}
+}
+@keyframes svgOnLoad3 {
+    10% {opacity: 0;}
+    25% {opacity: 1;}
+    40% {opacity: 0;}
+    67% {opacity: 0;}
+    70% {opacity: 1;}
+    73% {opacity: 0;}
+    87% {opacity: 0;}
+    90% {opacity: 1;}
+    93% {opacity: 0;}
+}
+*/
+
+
+
+/*
+@-webkit-keyframes svgOnLoad1 {
+    0% {opacity: 0;}
+    5% {opacity: 1;}
+    10% {opacity: 0;}
+    45% {opacity: 0;}
+    50% {opacity: 1;}
+    55% {opacity: 0;}
+    100% {opacity: 1;}
+}
+@keyframes svgOnLoad1 {
+    0% {opacity: 0;}
+    5% {opacity: 1;}
+    10% {opacity: 0;}
+    45% {opacity: 0;}
+    50% {opacity: 1;}
+    55% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+@-webkit-keyframes svgOnLoad2 {
+    0% {opacity: 0;}
+    10%
+    20%
+    30%
+    40%
+    50%
+    60%
+    100% {opacity: 1;}
+}
+@keyframes svgOnLoad2 {
+    0% {opacity: 0;}
+    15% {opacity: 1;}
+    25% {opacity: 0;}
+
+    65% {opacity: 0;}
+    70% {opacity: 1;}
+    75% {opacity: 0;}
+    100% {opacity: 1;}
+}
+*/
